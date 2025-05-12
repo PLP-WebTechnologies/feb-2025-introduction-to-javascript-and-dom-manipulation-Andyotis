@@ -36,6 +36,13 @@
         button:hover {
             background-color: #0056b3;
         }
+
+        #new-element {
+            background-color: #d3d3d3;
+            padding: 10px;
+            margin-top: 20px;
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -45,19 +52,22 @@
     </header>
 
     <main>
+        <!-- Section for changing text content -->
         <section>
             <p id="text-content">This is the original text content.</p>
             <button id="change-text-btn">Change Text</button>
         </section>
 
+        <!-- Section for changing styles -->
         <section>
             <p id="style-paragraph">This text will change style.</p>
             <button id="change-style-btn">Change Style</button>
         </section>
 
+        <!-- Section for toggling an element -->
         <section>
             <button id="toggle-element-btn">Toggle Element</button>
-            <div id="new-element" style="display:none;">
+            <div id="new-element">
                 <p>This is a new dynamically added element!</p>
             </div>
         </section>
