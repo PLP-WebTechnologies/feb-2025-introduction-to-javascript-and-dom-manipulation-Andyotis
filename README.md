@@ -1,26 +1,95 @@
-# Introduction to JavaScript and DOM Manipulation
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Web Page</title>
+    <style>
+        /* CSS Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
 
-## Objectives
+        header, footer {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 1em;
+        }
 
-Write basic JavaScript functions.
-Manipulate the DOM dynamically.
-Respond to user interactions.
+        main {
+            padding: 20px;
+        }
 
-## Instructions
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
 
-- Create a script.js file and link it to a HTML.
-- Structure the document using DOCTYPE, html, head, and body.
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
 
->[!NOTE]
->  - Write JavaScript that:
->  - Changes text content dynamically.
->  - Modifies CSS styles via JavaScript.
->  - Adds or removes an element when a button is clicked.
+    <header>
+        <h1>Welcome to My Interactive Web Page</h1>
+    </header>
 
+    <main>
+        <section>
+            <p id="text-content">This is the original text content.</p>
+            <button id="change-text-btn">Change Text</button>
+        </section>
 
-# Tasks
-- Create a well-structured HTML5 document.
-- Use at least 5 different HTML elements.
-- Ensure semantic correctness.
+        <section>
+            <p id="style-paragraph">This text will change style.</p>
+            <button id="change-style-btn">Change Style</button>
+        </section>
 
-Happy Coding! 💻✨
+        <section>
+            <button id="toggle-element-btn">Toggle Element</button>
+            <div id="new-element" style="display:none;">
+                <p>This is a new dynamically added element!</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Interactive Web Page</p>
+    </footer>
+
+    <script>
+        // JavaScript to change the text content dynamically
+        document.getElementById('change-text-btn').addEventListener('click', function() {
+            document.getElementById('text-content').textContent = 'The text has been updated!';
+        });
+
+        // JavaScript to change the CSS styles dynamically
+        document.getElementById('change-style-btn').addEventListener('click', function() {
+            const paragraph = document.getElementById('style-paragraph');
+            paragraph.style.color = 'blue';
+            paragraph.style.fontSize = '20px';
+            paragraph.style.fontWeight = 'bold';
+        });
+
+        // JavaScript to add or remove an element when the button is clicked
+        document.getElementById('toggle-element-btn').addEventListener('click', function() {
+            const newElement = document.getElementById('new-element');
+            if (newElement.style.display === 'none') {
+                newElement.style.display = 'block';
+            } else {
+                newElement.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
